@@ -34,3 +34,16 @@ usd.addEventListener('input' , async() => {
         return 0; // valeur par défaut si erreur
     }
 }
+
+const sidenav = document.getElementById("mySidenav");
+const openBtn = document.getElementById("openBtn");
+const closeBtn = document.getElementById("closeBtn");
+
+openBtn.onclick = openNav;
+closeBtn.onclick = closeNav;
+
+/* Set the width of the side navigation to 250px */
+function openNav() {
+  sidenav.classList.add("active");
+}
+
