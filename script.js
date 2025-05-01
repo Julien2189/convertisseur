@@ -47,3 +47,11 @@ function openNav() {
   sidenav.classList.add("active");
 }
 
+function closeNav() {
+  sidenav.classList.remove("active");
+}
+document.querySelectorAll('.sidenav a').forEach(link => {
+    link.addEventListener('click', (e) => {
+        console.log('Lien cliqué :', link.href); // Pour déboguer
+    });
+});
