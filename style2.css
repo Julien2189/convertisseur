@@ -8,44 +8,103 @@ body {
     background: url('image.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-size: 22px;
+    overflow-y: auto;
 }
 .overlay {
-    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 100%;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    min-height: 100em;
     background-color: rgba(0, 0, 0, 0.3); /* noir à 30% d'opacité */
     z-index: 1; /* derrière ton contenu principal */
 }
+.carousel {
+  width: 500px;
+}
+.carousel-inner {
+  max-width: 500px;
+  max-height: 280px;
+}
+@media screen and (min-width:768px){
 .containerH {
     background-color: rgba(79, 72, 72, 0.2);
     height: 50px;
     display: flex;
     padding: 10px;
     border-radius: 2%;
-   
-}
-.containerH ,h2 {
-    
-    color: aqua;
-    font-size: 20px;
-    
-}
-main{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    font-size: 22px;
     flex-direction: row;
-    height: 100%;
-   
-   padding-right: 10px;
-    width: 100%;
-    box-shadow: 10px 5px 5px rgb(9, 221, 94);
+}
+ul {
+  list-style: none;
+}
+.containerH .sidenav {
+  justify-items: flex-end;
+}
+.sidenav ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 20px;
+}
+.close {
+  display: none;
+}
+.containerH h2 {
+  flex: 1;
+    font-size: 20px;
+    text-align:left; 
+}
+}
+ .principal {
+  display: flex;
+  
+  justify-content: center;
+  align-items: center ;
+  margin-top: 50px;
+
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  padding: 20px;
+  margin-top: 20px;
+}
+.affichage {
+  display: flex;
+ flex-direction: row;
+  gap: 40px; /* espace entre les blocs */
+  margin-top: 20px;
+  flex-wrap: wrap ;
+  justify-content: center;
+
+}
+.crypto{
+    color: aqua;
+  padding: 10px;
+  border: 1px solid rgb(225, 229, 233,0.5);
+  background-color: rgb(225, 229, 233,0.5);
+  border-radius: 10%;
+  height: 20%;
+  text-align:center;
+}
+.crypto h1,p{
+  padding: 15px;
+  text-align: center;
+}
+.carousel slide {
+  width: 50%;
 }
 .main h1 {
     text-align: center;
 }
+
 .main{
     display: flex;
     flex-direction: column;
@@ -71,62 +130,123 @@ margin-bottom: 10px;
 width: 100px; 
 text-align: center;
 }
+.footerr{
+  text-align: center;
+  position: relative;
+  color: red;
+    background-color: rgba(8, 8, 8, 0.3);
+  width: 100%;
+  height: 10em;
+}
 
-.sidenav {
-    height: auto;
-    width: 200px;
-    position: absolute;
-    z-index: 1;
-    top: 0;
-    right: -250px;
-    background-color: rgb(225, 229, 233,0.5);
-    padding-top: 60px;
-    transition: left 0.5s ease;
-  }
-  .sidenav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: red;
-    display: block;
-    transition: 0.3s;
-  }
-  .sidenav a:hover {
-    color: #111;
-  }
-  .sidenav.active {
-    right: 0;
-  }
-  .sidenav .close {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-  }
-  #openBtn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-  }
-  .burger-icon span {
-    display: block;
-    width: 35px;
-    height: 5px;
-    background-color: black;
-    margin: 6px 0;
-  }
 @media screen and (max-width:768px) {
+  body {
+    height: 100%;
+    width: 100%;
+    background: url('image.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment:initial;
+    font-size: 10;
+    overflow-y: auto;
+}
+.overlay {
+    display: flex;
+    flex-direction: column;
+    z-index: 100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    min-height: 100em;
+    background-color: rgba(0, 0, 0, 0.3); /* noir à 30% d'opacité */
+    z-index: 1; /* derrière ton contenu principal */
+}
+  
     .main {
+      
         height: auto;
-        width: 80%;
+        width: auto;
     }
-     .input {
+    .affichage {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .crypto {
+       display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 250px;
+      height: 250px;
+    }
+    .carousel  {
+      width: 50%;
+    }
+    .carousel slide pointer-event {
+      width: 50%;
+    }
+    .carousel {
+      width: 250px;
+      height: 250px;
+    }
+    .containerH h2 {
+      font-size: 25px;
+      margin-top: 10px;
+      margin-left: 10px;
+      color: red;
+    }
+    .sidenav {
+      height: auto;
+      width: 200px;
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: -250px;
+      background-color: rgb(225, 229, 233,0.5);
+      padding-top: 60px;
+      transition: left 0.5s ease;
+    }
+    .sidenav ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .sidenav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 25px;
+      color: red;
+      display: block;
+      transition: 0.3s;
+    }
+    .sidenav a:hover {
+      color: #111;
+    }
+    .sidenav.active {
+      right: 0;
+    }
+    .sidenav .close {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+    }
+    #openBtn {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+    .burger-icon span {
+      display: block;
+      width: 35px;
+      height: 5px;
+      background-color: red;
+      margin: 6px 0;
+    }
+    .input,select ,textarea  {
         font-size: 16px;
     }
-    
 }
